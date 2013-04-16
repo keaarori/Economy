@@ -1,0 +1,12 @@
+name: HackShardGaming Economy
+main: com.keaarori.QuickCreative.QuickCreative
+version: 0.1
+authors: [keaarori]
+website: http://hackshardgaming.net
+load: startup
+description: Bitcoin Economy Plugin For HackshardGaming
+commands:
+  HSG:
+    description: Switches GameModes
+    usage: |
+           /<command> - Changes Game Mode
