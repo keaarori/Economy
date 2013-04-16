@@ -9,4 +9,4 @@ commands:
   HSG:
     description: Switches GameModes
     usage: |
-           /<command> - Changes Game Mode
+           /<command> - Shows HSG Menu.

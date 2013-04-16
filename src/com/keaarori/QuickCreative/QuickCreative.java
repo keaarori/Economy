@@ -1,4 +1,5 @@
 package com.keaarori.QuickCreative;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -8,6 +9,7 @@ public class QuickCreative extends JavaPlugin
     @Override
     public void onEnable()
     {
+        System.out.println("Connecting to Database");
     
     }
     @Override
@@ -27,13 +29,35 @@ public class QuickCreative extends JavaPlugin
            }
          default :
            {
-             if (String.valueOf(args[0]).equalsIgnoreCase("GM"))
-             {
-               sender.sendMessage("Sir We have liftoff");
-             }
-           }
-    }
-               return true;
+               switch (String.valueOf(args[0]))
+               {
+                   case "btc" :
+                   {
+                       btc.btc(sender, command, label, args);
+                       // for testing purposes
+                               Database.connect(sender);
+                       break;
+                   }
+                   case "mode" :
+                   {
+                       mode.mode(sender, command, label, args);
+                       break;
+                   }
+                   case "refill" :
+                   {
+                       refill.refill(sender, command, label, args);
+                       break;
+                   }
+                   case "referrals" :
+                   {
+                       referrals.referrals(sender, command, label, args);
+                       break;
+                   }
+               }
+            }
+
+         }
+                       return true;
     }
 }
 

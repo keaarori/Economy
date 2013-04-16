@@ -13,24 +13,18 @@ public class Commands {
 {
         if (sender instanceof Player)
     {
-        String Commands[] = {"Game Mode", "Operating Mode"};
-        String Sendmessages[] = {"§cHack Shard Gaming - Economy \n Commands: §f"};
+        String Commands[] = {"btc", "mode", "refill","deposit","withdraw X.XX","referrals","mute player_name","send player_name amount"};
+        String Descriptions[] = {"checks Balance", "changes between real bitcoins and play money", "refills your play money","deposit bitcoins","withdraw a specific amount","earn free bitcoins with referrals","mutes a player, (§a/unmute §fto reverse)", "send btc to another player"};
+        String Sendmessages[] = {"§aBitShard Help:", ""};
         if (Commands.length > 0)
                 {
-                 for (int i=0; i<Commands.length; i++)
-                 {
-                  if (i > 0)
-                  {
-                      Sendmessages[0] = Sendmessages[0] + "§c , §f";
-                  }
-                  
-                  Sendmessages[0] = (Sendmessages[0].toString() + Commands[i].toString());
-                     
-                 }
                  sender.sendMessage(Sendmessages[0]);
+                 for (int i=0; i<Commands.length; i++)
+                 {             
+                  Sendmessages[1] =  ("§a/" + Commands[i].toString() + "§f " + Descriptions[i].toString());
+                  sender.sendMessage(Sendmessages[1]);
+                 }
                 } 
-          
-
     }
     else
     {
